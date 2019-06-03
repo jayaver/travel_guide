@@ -11,15 +11,18 @@ import { HomeComponent } from './home/home.component';
 import { SigninComponent } from './signin/signin.component'
 import { SignupComponent } from './signup/signup.component';
 import { environment } from '../environments/environment';
-import { NavComponent } from './nav/nav.component'
-
+import { NavComponent } from './nav/nav.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { TravelComponent } from './travel/travel.component'
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     SigninComponent,
     SignupComponent,
-    NavComponent
+    NavComponent,
+    TravelComponent
   ],
   imports: [
     BrowserModule,
@@ -27,7 +30,10 @@ import { NavComponent } from './nav/nav.component'
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule,
     AngularFireStorageModule,
-    AngularFireDatabaseModule
+    AngularFireDatabaseModule,
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
