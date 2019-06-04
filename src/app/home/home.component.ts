@@ -31,6 +31,7 @@ export class HomeComponent implements OnInit {
         // localStorage.setItem('citydata', term.location);
         console.log(term);
         // this.terms = term.terms;
+        
       })
     })
 
