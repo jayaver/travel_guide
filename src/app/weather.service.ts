@@ -9,7 +9,7 @@ export class WeatherService {
   constructor(private http: HttpClient) { }
 
   getCity(term: string) {
-    return this.http.get(`http://api.apixu.com/v1/current.json?key=ea2a4a9d83ba4aa39a6182935190106&q=${term}`);
+    return this.http.get(`http://api.apixu.com/v1/current.json?key=60c58a93ad3e4a318a1133023191503&q=${term}`);
 }
 
 }
