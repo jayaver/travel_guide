@@ -1,53 +1,39 @@
 <div class="container">
- <div class="card">
-  <h5 class="card-header">Country:</h5>
-    <div class="card-body">
-    <h5 class="card-title">Temp:   </h5>
-    <img class="card-img-top" src="..." alt="Card image cap">
-    </div>
+ <div class="card ">
+  <h3 class="card-header">Country: {{terms.location.country}}</h3>
+  <div class="card-body">
     
+    
+    <h4 class="align-center"> {{terms.location.name}}  </h4>
+    
+    <h3 class="temp"> {{terms.current.temp_c}}°c</h3>
+    <span class="text">   {{terms.current.condition.text}} </span><br>
+    <img class="icon" [src]="terms.current.condition.icon" alt="Card image cap">
+   
+  
+  </div>
 </div>
 <br>
 <div class="container">
- <div class="row">
-  <div class="list-group col-md-6">
-    <a href="#" class="list-group-item list-group-item-action flex-column align-items-start ">
-      <div class="d-flex w-100 justify-content-between">
-        <h5 class="mb-1">List group item heading</h5>
+  <div class="row">
+    <section id="sources col-md-8">
+      <div class="card news" *ngFor="let source of sources">
+           
+            <div class="card-body d-flex">
+              <h5 class="card-title pr-5 text-wrap">{{source.title}}</h5><a href="{{source.url}}"   target="blank"><i class="fab fa-readme"></i></a>
+           </div>
+          </div>       
       
-      </div>
-      <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
-      <small>Donec id elit non mi porta.</small>
-    </a>
-    <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
-      <div class="d-flex w-100 justify-content-between">
-        <h5 class="mb-1">List group item heading</h5>
-        
-      </div>
-      <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
-      <small class="text-muted">Donec id elit non mi porta.</small>
-    </a>
-    <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
-      <div class="d-flex w-100 justify-content-between">
-        <h5 class="mb-1">List group item heading</h5>
-        
-      </div>
-      <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
-      <small class="text-muted">Donec id elit non mi porta.</small>
-    </a>
-  </div>
-<div class="col-md-6"> 
+    </section>
+    <section class="wiki col-md-4">
+        <div class="card">
 
-  <div class="card" style="width: 18rem;">
-    <img class="card-img-top" src="..." alt="Card image cap">
-    <div class="card-body">
-      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    </div>
-  </div>
+           
+            
 
-</div>
-</div>
-</div>
+        </div>
+    </section>
+  </div>
 
 
 
