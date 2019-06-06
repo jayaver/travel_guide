@@ -18,8 +18,6 @@ import { NewsComponent } from './news/news.component';
 import { ContactComponent } from './contact/contact.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,8 +26,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     CityComponent,
     SearchComponent,
     NewsComponent,
-    ContactComponent
-  
+    ContactComponent,
     
   ],
   imports: [

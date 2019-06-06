@@ -9,7 +9,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 })
 export class NewsComponent implements OnInit {
  
-  constructor(private route: ActivatedRoute, private news: NewsService) { }
+  constructor(private route:ActivatedRoute, private news:NewsService) { }
 
   ngOnInit() {
   

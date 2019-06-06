@@ -15,3 +15,8 @@ constructor(private route: Router) { }
     this.route.navigate(['/search', city]);
   }
 }
+
+
+
+
+
