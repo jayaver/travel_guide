@@ -1,47 +1,39 @@
-<body>
-    <div class="container-fluid bg-info">
-      <!---City, Country & Weather-->
-        <div class="row">
-            <div class="col-md-4 mt-2 pt-2">
-                <h3 class="header">{{terms.location.name}}</h3>    
-                <h5 class="align-center">Country: {{terms.location.country}} </h5> 
-            </div>
-            <div class="col-md-4 mt-2 pt-2 justify-content-center align-self-center">
-                <span class="text">   
-                    <img class="icon" [src]="terms.current.condition.icon" alt="Card image cap">
-                    {{terms.current.condition.text}}
-                </span>
-            </div>
-            <div class="col-md-4 mt-2 pt-2">
-                <h1 class="temp">{{terms.current.temp_c}}°c</h1>
-            </div>
+<div class="container">
+ <div class="card ">
+  <h3 class="card-header">Country: {{terms.location.country}}</h3>
+  <div class="card-body">
+    
+    
+    <h4 class="align-center"> {{terms.location.name}}  </h4>
+    
+    <h3 class="temp"> {{terms.current.temp_c}}°c</h3>
+    <span class="text">   {{terms.current.condition.text}} </span><br>
+    <img class="icon" [src]="terms.current.condition.icon" alt="Card image cap">
+   
+  
+  </div>
+</div>
+<br>
+<div class="container">
+  <div class="row">
+    <section id="sources col-md-8">
+      <div class="card news" *ngFor="let source of sources">
+           
+            <div class="card-body d-flex">
+              <h5 class="card-title pr-5 text-wrap">{{source.title}}</h5><a href="{{source.url}}"   target="blank"><i class="fab fa-readme"></i></a>
+           </div>
+          </div>       
+      
+    </section>
+    <section class="wiki col-md-4">
+        <div class="card">
+
+           
+            
+
         </div>
-    </div>
-        
-    <div class="container-fluid">
-        <div class="row">
-            <!----City info display from api-->
-            <div class="col-md-5 ml-4">        
-                <div class="row mr-2" >
-                    <br>
-                    <img class="citypic" [src]="places.pagemap.cse_image[0].src">
-                    <h6>{{places.pagemap.metatags[0].body}}
-                        <a [href] ="places.formattedUrl" target="_blank" class="read">Show more...</a> 
-                    </h6>
-                </div>
+    </section>
+  </div>
 
 
-            </div>
 
-            <!----News display from api-->
-            <div class="col-md-6">
-                <h5 class="News">News Headlines </h5>
-                <article class="list-group" *ngFor="let source of sources">
-                    <p class="list-text">{{ source.title}}
-                        <a [href] ="source.url" target="_blank" class="read">Read more</a>
-                    </p>
-                </article>
-            </div>
-        </div>
-    </div>
-</body>

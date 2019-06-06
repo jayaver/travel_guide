@@ -9,7 +9,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 })
 export class NewsComponent implements OnInit {
  
-  constructor(private route: ActivatedRoute, private news: NewsService) { }
+  constructor(private route:ActivatedRoute, private news:NewsService) { }
 
   ngOnInit() {
   
@@ -18,6 +18,7 @@ export class NewsComponent implements OnInit {
       this.news.getCity(term.city).subscribe((term: any) => {
        // localStorage.setItem('citydata', term.location);
         console.log(term);
+        
       })
     })
   }
