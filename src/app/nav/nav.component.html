@@ -2,15 +2,4 @@
   <h5 class="my-0 mr-md-auto font-weight-normal navbar-brand">
     SmartTraveler
   </h5>
-  <nav class="my-2 my-md-0 mr-md-3">
-    <a routerLink="/" class="p-2 text-dark">Home</a>
-    <small><span *ngIf="user | async">Welcome {{ (user | async)?.email }}</span></small>
-  </nav>
-  <div *ngIf="!(user | async)">
-    <a routerLink="/signin" class="btn btn-outline-primary">SignIn</a>
-    <a routerLink="/Signup" class="btn btn-outline-primary">Sign up</a>
-  </div>
-  <div *ngIf="user | async">
-    <button class="btn btn-outline-secondary" (click)="signOut()">Sign Out</button>
-  </div>
  </div>
