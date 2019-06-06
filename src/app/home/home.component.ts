@@ -2,8 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { WeatherService } from '../weather.service';
 import { NewsService } from '../news.service';
-import { WikiService } from '../wiki.service'
-import { Condition } from 'selenium-webdriver';
+import { WikiService } from '../wiki.service';
+import { ContactService } from '../contact.service';
+import { Item } from '../models/item';
+
 
 
 @Component({
@@ -20,16 +22,17 @@ export class HomeComponent implements OnInit {
   places:any;
   products =[];
 
-  constructor(private route: ActivatedRoute, private weather: WeatherService, 
-             private news:NewsService, private wiki: WikiService) { }
+  item:Item={
+    name:'',
+    email:'',
+    phone:''
+  }
+
+constructor(private route: ActivatedRoute, private weather: WeatherService, 
+             private news:NewsService, private wiki: WikiService, private contact: ContactService ) { }
 
   ngOnInit() {
 
-    // this.wiki.getData('/', {version: 'draft', starts_with: 'place/'})
-    // .then(data => {
-    //   // this.products = data.stories;
-    //   console.log(data)
-    // });
     
       this.route.params.subscribe(term => {
        // console.log(term);
@@ -49,17 +52,30 @@ export class HomeComponent implements OnInit {
           this.sources = source.articles;
           console.log(this.sources);
 
-       })
+        })
        
-       this.wiki.getWiki(term.city).subscribe((place: any) => {
+        this.wiki.getWiki(term.city).subscribe((place: any) => {
         // localStorage.setItem('citydata', term.location);
          console.log(place);
          this.places=place.items[0];
         console.log(this.places)
          
-       })
-       
-    })
+        })
+      })
+
+
   }
 
+  onSubmit(){
+    if(this.item.name != '' && this.item.email != '' && this.item.phone !=''){
+      this.contact.addItem(this.item);
+      this.item.name='';
+      this.item.email='';
+      this.item.phone='';
+      alert ("We will get in touch with you soon");
+      
+    }
+  }
 }
+
+
