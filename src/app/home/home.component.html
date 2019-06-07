@@ -1,5 +1,5 @@
 <body>
-    <div class="container-fluid bg-info">
+    <div class="container-fluid" style="background-color: #0aceec!important;">
       <!---City, Country & Weather-->
         <div class="row">
             <div class="col-md-4 mt-2 pt-2">
@@ -7,10 +7,9 @@
                 <h5 class="align-center">Country: {{terms.location.country}} </h5> 
             </div>
             <div class="col-md-4 mt-2 pt-2 justify-content-center align-self-center">
-                <span class="text">   
-                    <img class="icon" [src]="terms.current.condition.icon" alt="Card image cap">
-                    {{terms.current.condition.text}}
-                </span>
+                <img class="icon" [src]="terms.current.condition.icon" alt="Card image cap">
+                <span class="text"> {{terms.current.condition.text}}</span>
+                
             </div>
             <div class="col-md-4 mt-2 pt-2">
                 <h1 class="temp">{{terms.current.temp_c}}°c</h1>
@@ -18,48 +17,63 @@
         </div>
     </div>
         
+    <!----City info display from api-->
     <div class="container-fluid">
         <div class="row">
-            <!----City info display from api-->
             <div class="col-md-5 ml-4">        
                 <div class="row mr-2" >
                     <br>
                     <img class="citypic" [src]="places.pagemap.cse_image[0].src">
-                    <h6>{{places.pagemap.metatags[0].body}}
+                    <h6 class="citydesc">{{places.pagemap.metatags[0].body}}
                         <a [href] ="places.formattedUrl" target="_blank" class="read">Show more...</a> 
                     </h6>
                 </div>
                 <br>
+
+                <div class="row mr-2" >
+                        <br>
+                        <h4 class="food">Food & Drink</h4>
+
+                        <h6 class="foodName">{{places.pagemap.foodestablishment[0].name}}, {{places.pagemap.foodestablishment[1].name}},
+                                {{places.pagemap.foodestablishment[2].name}}, {{places.pagemap.foodestablishment[3].name}},
+                                {{places.pagemap.foodestablishment[4].name}}, {{places.pagemap.foodestablishment[5].name}},
+                                {{places.pagemap.foodestablishment[6].name}}, {{places.pagemap.foodestablishment[7].name}},
+                                {{places.pagemap.foodestablishment[8].name}}, {{places.pagemap.foodestablishment[9].name}}
+                            
+                        </h6>
+                    </div>
+                    <br>
+    
+
+                <!-----Contact Form-->
                 <div class="card">
                     <div class="card-content">
-                      <span class="card-title">SmartTraveler offers exciting deals to registered users: </span>
-                        
-                      <form (ngSubmit)="onSubmit()" class="col s6">
-                        <div class="row">
-                    
-                          <div class="input-field col s6">
-                            <input type="text" placeholder="Name" [(ngModel)]="item.name" name="name">
-                            <label>Name</label>
-                          </div>
-                          <div class="input-field col s6">
-                            <input type="text" placeholder="E-mail Id" [(ngModel)]="item.email" name="email">
-                            <label>E-mail Id</label>
-                          </div>
-                          <div class="input-field col s6">
-                            <input type="text" placeholder="Phone Number" [(ngModel)]="item.phone" name="phone">
-                            <label>Phone</label>
-                          </div>
-                          <input type="submit" value="Submit" class="btn">
-                        </div>
+                        <span class="card-title ml-2">SmartTraveler offers exciting deals to registered users: </span>
+                        <form (ngSubmit)="onSubmit()" class="save">   
+                            <div class="row">
+                                <div class="input-field;">
+                                    <label class="label">Name : </label>
+                                    <input type="text" placeholder="Name" [(ngModel)]="item.name" name="name" class="input">   
+                                </div>
+                                <div class="input-field">
+                                    <label class="label ml-3">E-mail Id : </label>
+                                    <input type="text" placeholder="E-mail Id" [(ngModel)]="item.email" name="email" clas="input">
+                                </div>
+                                <div class="input-field">
+                                    <label class="label">Phone : </label>
+                                    <input type="text" placeholder="Phone Number" [(ngModel)]="item.phone" name="phone" class="input">    
+                                </div>
+                                <button type="submit" value="Submit" class="btn btn-info ml-4">Submit</button>
+                            </div>
+                            
                       </form>
                     </div>
                 </div>
-
             </div>
 
             <!----News display from api-->
             <div class="col-md-6">
-                <h5 class="News">News Headlines </h5>
+                <h5 class="news">News Headlines </h5>
                 <article class="list-group" *ngFor="let source of sources">
                     <p class="list-text">{{ source.title}}
                         <a [href] ="source.url" target="_blank" class="read">Read more</a>

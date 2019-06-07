@@ -9,7 +9,7 @@ export class NewsService {
   constructor(private http: HttpClient) { }
 
   getCity(term: string) {
-    return this.http.get(`https://newsapi.org/v2/everything?q=${term}&apiKey=f15e441dbbf6458196b518b5433ed625&result=5`)
+    return this.http.get(`https://newsapi.org/v2/everything?q=${term}&pageSize=10&apiKey=f15e441dbbf6458196b518b5433ed625`)
   }
 
   // getArticles(news:string) {

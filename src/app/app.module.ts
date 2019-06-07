@@ -16,9 +16,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { CityComponent } from './city/city.component';
 import { SearchComponent } from './search/search.component';
 import { NewsComponent } from './news/news.component';
-import { ContactComponent } from './contact/contact.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
+import { ContactComponent } from './contact/contact.component';
 import { ContactService} from '../app/contact.service';
 
 @NgModule({
@@ -29,7 +28,8 @@ import { ContactService} from '../app/contact.service';
     CityComponent,
     SearchComponent,
     NewsComponent,
-    ContactComponent,
+    ContactComponent
+    
     
   ],
   imports: [
