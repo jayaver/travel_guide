@@ -6,9 +6,8 @@
     font-family:sans-serif;
    }
 
-   hr{
-    border-top: 5px solid white;
-   }
+
+   /*weather background format */
    .container-fluid{
     width: 90%;
     padding-top: 20px;
@@ -17,113 +16,130 @@
     margin-top: 0;
     text-align: -webkit-center;
     
+    
    }
 
+   /*Temprature */
    .temp{
      font-size:50px;
    }
+
+   /*City Url */
  .read{
    
    font-size:13px;
  }
 
+/*City pic */
  .citypic{
-    width: 600px;
+    width: 450px;
     height: 300px;
     border-radius: 20px;
     margin-top: 20px;
     margin-bottom: 20px;
  }
 
- .card-content{
-   height:150px;
-   border-radius:10px;
-  
- }
-
+/*weather icon */
  .icon{
   vertical-align: -webkit-baseline-middle;
   border-style: none;
   width: 110px;
  }
 
+ /*Contact form */
+ .card-content{
+  height:250px;
+  border-radius:10px;
+ 
+}
+
+ /*Contact Title */
  .card-title{
    margin-bottom:10px;
    font-family: sans-serif;
    font-weight: bold;
+   font-size: 15px;
  }
   
+ /*Contact Form submit */
  .save{
    padding-top:15px;
    padding-left:30px;
  }
 
+ /*Contact input label */
  .label{
-  
-   width: 80px;
-   
+  margin-bottom: 20px;
+  width: 100px;
+  text-align: left;  
 }
 
+/*conatct input */
 .input {
   margin-left:5px;
 }
 
-   .col-md-4{
+.input-field{
+  margin-right :10px;
+}
+
+/*Contact form button*/
+.btn{
+  width: 100px;
+  height: 35px;
+  color: #fff;
+  background-color: #0dc1de;
+  border-color: #10707f;
+}
+
+
+/*weather column format */
+.col-md-4{
      border:2px;
      justify-content: flex-end;
 
-   }
+}
 
-   .list-group{
-    border-radius: 5px;
-    background: #f7f8fb;
-    padding-top: 20px;
-    padding-bottom: 0px;
-    height: 60px;
-    border-bottom-style: solid;
-    padding-left: 5px;
-    padding-right: 2px;
-    margin-bottom: 0;
-   }
-  .input-field{
-    margin-bottom:20px;
-    margin-right :10px;
-  }
+   /*News List*/
+.list-group{
+  border-radius: 5px;
+  background: #f7f8fb;
+  padding-top: 20px;
+  padding-bottom: 0px;
+  height: 70px;
+  border-bottom-style: solid;
+  padding-left: 5px;
+  padding-right: 2px;
+  margin-bottom: 0;
+}
+/* News heading*/
+  h5.news{
+  font-size: 25px;
+  font-weight: bold;
+  color: #ad1111;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
 
-  .citydesc{
-    font-size: 20px;
-    text-align: justify;
-  }
+
+
+   /* City Image*/
+.citydesc{
+  font-size: 15px;
+  text-align: justify;
+}
 
   
+/* Food Display*/
+.food{
+  color: #6f42c1b5;
+  font-weight: bold;
+  margin-top:15px;
+}
 
-  .btn{
-    width: 100px;
-    height: 35px;
-    margin-left: 90px !important;
-  }
-
-  .food{
-    color: #ab00ff;
-    font-weight: bold;
-  }
-
-  .foodName{
-    font-size: 20px;
-    text-align: justify;
-    font-style: italic;
-  }
-
-  h5.news{
-    font-size: 25px;
-    font-weight: bold;
-    color: #ad1111;
-    padding-top: 20px;
-    padding-bottom: 20px;
-  }
-
-  .btn{
-    color: #fff;
-    background-color: #0dc1de;
-    border-color: #10707f;
-  }
+.foodName{
+  font-size: 15px;
+  text-align: justify;
+  margin-bottom:30px;
+   
+}

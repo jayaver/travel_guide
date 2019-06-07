@@ -1,3 +1,17 @@
+<head>
+    <!-- Hotjar Tracking Code for https://travelguide.jayaver.now.sh/ -->
+<script>
+        (function(h,o,t,j,a,r){
+            h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+            h._hjSettings={hjid:1354731,hjsv:6};
+            a=o.getElementsByTagName('head')[0];
+            r=o.createElement('script');r.async=1;
+            r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+            a.appendChild(r);
+        })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+    </script>
+    
+</head>
 <body>
     <div class="container-fluid" style="background-color: #0aceec!important;">
       <!---City, Country & Weather-->
@@ -8,8 +22,7 @@
             </div>
             <div class="col-md-4 mt-2 pt-2 justify-content-center align-self-center">
                 <img class="icon" [src]="terms.current.condition.icon" alt="Card image cap">
-                <span class="text"> {{terms.current.condition.text}}</span>
-                
+                <span class="text"> {{terms.current.condition.text}}</span>          
             </div>
             <div class="col-md-4 mt-2 pt-2">
                 <h1 class="temp">{{terms.current.temp_c}}°c</h1>
@@ -28,27 +41,21 @@
                         <a [href] ="places.formattedUrl" target="_blank" class="read">Show more...</a> 
                     </h6>
                 </div>
-                <br>
 
-                <div class="row mr-2" >
-                        <br>
-                        <h4 class="food">Food & Drink</h4>
-
-                        <h6 class="foodName">{{places.pagemap.foodestablishment[0].name}}, {{places.pagemap.foodestablishment[1].name}},
-                                {{places.pagemap.foodestablishment[2].name}}, {{places.pagemap.foodestablishment[3].name}},
-                                {{places.pagemap.foodestablishment[4].name}}, {{places.pagemap.foodestablishment[5].name}},
-                                {{places.pagemap.foodestablishment[6].name}}, {{places.pagemap.foodestablishment[7].name}},
-                                {{places.pagemap.foodestablishment[8].name}}, {{places.pagemap.foodestablishment[9].name}}
-                            
-                        </h6>
+                <div class="row mr-2">
+                    <h4 class="food">Food & Drink</h4>
+                    <h6 class="foodName">{{places.pagemap.foodestablishment[0].name}}, {{places.pagemap.foodestablishment[1].name}},
+                        {{places.pagemap.foodestablishment[2].name}}, {{places.pagemap.foodestablishment[3].name}},
+                        {{places.pagemap.foodestablishment[4].name}}, {{places.pagemap.foodestablishment[5].name}},
+                        {{places.pagemap.foodestablishment[6].name}}, {{places.pagemap.foodestablishment[7].name}},
+                        {{places.pagemap.foodestablishment[8].name}}, {{places.pagemap.foodestablishment[9].name}}     
+                    </h6>
                     </div>
-                    <br>
     
-
                 <!-----Contact Form-->
                 <div class="card">
                     <div class="card-content">
-                        <span class="card-title ml-2">SmartTraveler offers exciting deals to registered users: </span>
+                        <span class="card-title ml-2">Get your travel planned by our Experts, please fill the form </span>
                         <form (ngSubmit)="onSubmit()" class="save">   
                             <div class="row">
                                 <div class="input-field;">
@@ -56,16 +63,17 @@
                                     <input type="text" placeholder="Name" [(ngModel)]="item.name" name="name" class="input">   
                                 </div>
                                 <div class="input-field">
-                                    <label class="label ml-3">E-mail Id : </label>
-                                    <input type="text" placeholder="E-mail Id" [(ngModel)]="item.email" name="email" clas="input">
+                                    <label class="label">E-mail Id : </label>
+                                    <input type="text" placeholder="E-mail Id" [(ngModel)]="item.email" name="email" class="input">
                                 </div>
                                 <div class="input-field">
                                     <label class="label">Phone : </label>
-                                    <input type="text" placeholder="Phone Number" [(ngModel)]="item.phone" name="phone" class="input">    
+                                    <input type="text" placeholder="Phone Number" [(ngModel)]="item.phone" name="phone" class="input">
+                                
+                                <br>
+                                    <button type="submit" value="Submit" class="btn btn-info ml-4">Submit</button>
                                 </div>
-                                <button type="submit" value="Submit" class="btn btn-info ml-4">Submit</button>
-                            </div>
-                            
+                            </div>               
                       </form>
                     </div>
                 </div>
@@ -82,5 +90,5 @@
             </div>
         </div>
     </div>
-    
+ 
 </body>

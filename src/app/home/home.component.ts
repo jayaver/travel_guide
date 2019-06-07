@@ -14,58 +14,54 @@ import { Item } from '../models/item';
   styleUrls: ['./home.component.css']
 })
   
-// localStorage = [];
+
 export class HomeComponent implements OnInit {
 
-  terms = [];
+  terms: any;
   sources: any;
   places:any;
-  products =[];
-
+  //food=[];
+ 
+  //Fields for firebase
   item:Item={
     name:'',
     email:'',
     phone:''
   }
 
+  //Calling WeatherService, NewsService, WikiService & ContactService
 constructor(private route: ActivatedRoute, private weather: WeatherService, 
              private news:NewsService, private wiki: WikiService, private contact: ContactService ) { }
 
   ngOnInit() {
 
-    
+    //weatherapi data call
       this.route.params.subscribe(term => {
-       // console.log(term);
-        this.weather.getCity(term.city).subscribe((term : any) => {
-          
-          //console.log(term);
-          this.terms = term;
-          console.log(this.terms);
-          //console.log(this.terms.ma)
-          })
+      this.weather.getCity(term.city).subscribe((term : any) => {
+      this.terms = term;
+    })
+
+    //newsapi data call
   
-        this.news.getCity(term.city).subscribe((source: any) => {
-          // localStorage.setItem('citydata', term.location);
-          //console.log(term);
-          console.log(source.articles);
+      this.news.getCity(term.city).subscribe((source: any) => {
+      this.sources = source.articles;
+    })
 
-          this.sources = source.articles;
-          console.log(this.sources);
-
-        })
+  //googleapi data call
        
-        this.wiki.getWiki(term.city).subscribe((place: any) => {
-        // localStorage.setItem('citydata', term.location);
-         console.log(place);
-         this.places=place.items[0];
-        console.log(this.places)
-         
-        })
-      })
+      this.wiki.getWiki(term.city).subscribe((place: any) => { 
+      this.places=place.items[0];
+      //this.food=this.places.pagemap.foodestablishment;   
+      //console.log(this.food)
+    })
+
+  })
 
 
   }
 
+  //data posting in firebase
+  
   onSubmit(){
     if(this.item.name != '' && this.item.email != '' && this.item.phone !=''){
       this.contact.addItem(this.item);
